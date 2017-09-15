@@ -6,7 +6,7 @@ import styles from './Users.css';
 import { PAGE_SIZE } from '../../constants';
 import UserModal from './UserModal';
 
-function Users({ dispatch, list: dataSource, total, page: current }) {
+function Users({ dispatch, list: dataSource, total, page: current,loading }) {
   function deleteHandler(id) {
     dispatch({
       type: 'users/remove',
@@ -79,6 +79,7 @@ function Users({ dispatch, list: dataSource, total, page: current }) {
         <Table
           columns={columns}
           dataSource={dataSource}
+          loading={loading}
           rowKey={record => record.id}
           pagination={false}
         />
@@ -100,6 +101,7 @@ function mapStateToProps(state) {
     list,
     total,
     page,
+    loading:state.loading.models.users,
   };
 }
 
