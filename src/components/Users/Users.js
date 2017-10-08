@@ -7,6 +7,7 @@ import { PAGE_SIZE } from '../../constants';
 import UserModal from './UserModal';
 
 function Users({ dispatch, list: dataSource, total, page: current,loading }) {
+  console.log(arguments);
   function deleteHandler(id) {
     dispatch({
       type: 'users/remove',
@@ -96,6 +97,7 @@ function Users({ dispatch, list: dataSource, total, page: current,loading }) {
 }
 
 function mapStateToProps(state) {
+  console.log(state);
   const { list, total, page } = state.users;
   return {
     list,

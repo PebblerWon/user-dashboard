@@ -3,9 +3,10 @@ import { connect } from 'dva';
 import styles from './Users.css';
 import UsersComponent from '../components/Users/Users';
 import MainLayout from '../components/MainLayout/MainLayout';
-function Users({location}) {
+function Users(prop) {
+	console.log(prop);
   return (
-    <MainLayout location={location}>
+    <MainLayout location={prop.location}>
     	<div className={styles.normal}>
     		<UsersComponent />
     	</div>

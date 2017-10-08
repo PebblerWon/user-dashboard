@@ -7,6 +7,7 @@ import './index.css';
 const app = dva();
 app.use(createLoading());
 app.model(require("./models/users"));
+app.model(require("./models/example"));
 
 // 2. Plugins
 // app.use({});
@@ -16,6 +17,6 @@ app.model(require("./models/users"));
 
 // 4. Router
 app.router(require('./router'));
-
+console.log(app)
 // 5. Start
 app.start('#root');
